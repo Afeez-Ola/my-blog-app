@@ -11,7 +11,7 @@ function Post(props) {
       </div>
       <div class='card_content'>
        <h2 class='card_title'>{props.title}</h2>
-       <p class='card_text'>{props.descriptio}</p>
+       <p class='card_text'>{props.description}</p>
        <button class='btn card_btn'>Read More</button>
       </div>
      </div>
