@@ -1,27 +1,23 @@
 import React, { useEffect, useState } from 'react';
+import Post from './Post';
 
 function Posts() {
- const [blog, setBlog] = useState({
-  id: 0,
-  brand: '',
-  description: '',
-  images: '',
-  title: '',
- });
- //  useEffect(() => {
- //   fetch('https://dummyjson.com/products')
- //    .then((res) => console.log(res.json()))
- //    .catch((err) => console.log(err));
- //  });
+ const [blogs, setBlog] = useState([]);
 
  const fetchBlog = () => {
-  fetch('https://api.slingacademy.com/v1/sample-data/blog-posts')
-   .then((res) => {
-    console.log(res.text);
+  fetch('https://dummyjson.com/products', {
+   method: 'GET',
+  })
+   .then((res) => res.json())
+   .then((data) => {
+    console.log(data.products);
+    setBlog(data.products);
    })
    .catch((err) => console.log(err));
  };
- fetchBlog();
+ setInterval(() => {
+  fetchBlog();
+ }, 1000000);
  return (
   <div className='posts'>
    <div className='search-container'>
@@ -31,7 +27,18 @@ function Posts() {
      placeholder='search posts'
     ></input>
    </div>
-   <div className='posts-container'></div>
+   <div className='posts-container'>
+    {blogs.map((blog, index) => {
+     return (
+      <Post
+       index={index}
+       title={blog.title}
+       thumbnail={blog.thumbnail}
+       description={blog.description}
+      ></Post>
+     );
+    })}
+   </div>
   </div>
  );
 }
