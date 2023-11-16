@@ -15,9 +15,9 @@ function Posts() {
    })
    .catch((err) => console.log(err));
  };
- setInterval(() => {
-  fetchBlog();
- }, 1000000);
+
+ fetchBlog();
+
  return (
   <div className='posts'>
    <div className='search-container'>

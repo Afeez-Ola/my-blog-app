@@ -1,21 +1,24 @@
-import React from "react";
+import React from 'react';
 
-function Post(props){
-    return (
-     <div className='post' key={props.index}>
-      <div className='wrapper'>
+function Post(props) {
+ return (
+  <div className='post main' key={props.index}>
+   <ul class='cards'>
+    <li class='cards_item'>
+     <div class='card'>
+      <div class='card_image'>
        <img src={props.thumbnail}></img>
-       <p className='title'>{props.title}</p>
-       <p className='content'>{props.description}</p>
-
-       <a href='#_'>
-        <div class='readmore'>
-         <b>Read more!</b> <i class='fas fa-angle-right'></i>
-        </div>
-       </a>
+      </div>
+      <div class='card_content'>
+       <h2 class='card_title'>{props.title}</h2>
+       <p class='card_text'>{props.descriptio}</p>
+       <button class='btn card_btn'>Read More</button>
       </div>
      </div>
-    );
+    </li>
+   </ul>
+  </div>
+ );
 }
 
 export default Post;
