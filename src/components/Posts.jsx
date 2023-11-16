@@ -4,8 +4,8 @@ import Post from './Post';
 function Posts() {
  const [blogs, setBlog] = useState([]);
 
- const fetchBlog = () => {
-  fetch('https://dummyjson.com/products', {
+ useEffect(() => {
+  fetch('https://dummyjson.com/products?skip=5&limit=5', {
    method: 'GET',
   })
    .then((res) => res.json())
@@ -14,9 +14,19 @@ function Posts() {
     setBlog(data.products);
    })
    .catch((err) => console.log(err));
- };
+ });
 
- fetchBlog();
+ //  const fetchBlogWithBackoff = (retryCount = 0) => {
+ //   const delay = Math.pow(2, retryCount) * 1000; // Exponential backoff
+ //   setTimeout(() => {
+ //    fetchBlog().catch((error) => {
+ //     console.error(error);
+ //     fetchBlogWithBackoff(retryCount + 1);
+ //    });
+ //   }, delay);
+ //  };
+
+ // Call fetchBlogWithBackoff instead of fetchBlog
 
  return (
   <div className='posts'>
