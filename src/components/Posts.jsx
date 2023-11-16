@@ -17,7 +17,7 @@ function Posts() {
  const fetchBlog = () => {
   fetch('https://api.slingacademy.com/v1/sample-data/blog-posts')
    .then((res) => {
-    console.log(res);
+    console.log(res.text);
    })
    .catch((err) => console.log(err));
  };
