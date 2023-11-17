@@ -9,6 +9,7 @@ function Detail() {
    method: 'GET',
   })
    .then((res) => console.log(res))
+   .then((data) => console.log(data))
    .catch((err) => console.log(err));
  });
 
