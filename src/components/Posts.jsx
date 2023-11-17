@@ -16,18 +16,6 @@ function Posts() {
    .catch((err) => console.log(err));
  });
 
- //  const fetchBlogWithBackoff = (retryCount = 0) => {
- //   const delay = Math.pow(2, retryCount) * 1000; // Exponential backoff
- //   setTimeout(() => {
- //    fetchBlog().catch((error) => {
- //     console.error(error);
- //     fetchBlogWithBackoff(retryCount + 1);
- //    });
- //   }, delay);
- //  };
-
- // Call fetchBlogWithBackoff instead of fetchBlog
-
  return (
   <div className='posts'>
    <div className='search-container'>

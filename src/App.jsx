@@ -4,6 +4,7 @@ import { BrowserRouter,Routes,Route } from 'react-router-dom'
 // import './App.css'
 import NavBar from './components/Nav'
 import Posts from './components/Posts';
+import Detail from './components/Detail';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
    <>
     <NavBar></NavBar>
     <BrowserRouter>
-    <Posts></Posts>
+    {/* <Posts></Posts> */}
      <Routes>
       <Route path='/' element={<Posts></Posts>}></Route>
       <Route path={`/read/:id`} element={<Detail></Detail>}></Route>
