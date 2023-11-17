@@ -29,7 +29,7 @@ function Posts() {
     {blogs.map((blog, index) => {
      return (
       <Post
-       index={index}
+       index={blog.id}
        title={blog.title}
        thumbnail={blog.thumbnail}
        description={blog.description}
