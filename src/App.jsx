@@ -13,7 +13,8 @@ function App() {
     <BrowserRouter>
     <Posts></Posts>
      <Routes>
-      <Route></Route>
+      <Route path='/' element={<Posts></Posts>}></Route>
+      <Route path={`/read/:id`} element={<Detail></Detail>}></Route>
      </Routes>
     </BrowserRouter>
    </>
