@@ -5,7 +5,7 @@ function Posts() {
  const [blogs, setBlog] = useState([]);
 
  useEffect(() => {
-  fetch('https://dummyjson.com/products?skip=5&limit=5', {
+  fetch('https://dummyjson.com/products', {
    method: 'GET',
   })
    .then((res) => res.json())
@@ -29,7 +29,7 @@ function Posts() {
     {blogs.map((blog, index) => {
      return (
       <Post
-       index={blog.id}
+       index={index}
        title={blog.title}
        thumbnail={blog.thumbnail}
        description={blog.description}
