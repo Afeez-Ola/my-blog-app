@@ -5,6 +5,10 @@ function Posts() {
  const [blogs, setBlog] = useState([]);
  const [records, setRecord] = useState([]);
 
+ const [title, setTitle] = useState();
+ const [content, setContent] = useState();
+ const [image, setImage] = useState();
+
  useEffect(() => {
   const fetchData = async () => {
    try {
