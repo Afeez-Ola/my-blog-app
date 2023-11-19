@@ -7,21 +7,6 @@ function Detail() {
  const [images, setImages] = useState([]);
  const [error, setError] = useState(null);
 
- //  useEffect(() => {
- //   fetch(`https://dummyjson.com/products/${id}`, {
- //    method: 'GET',
- //   })
- //    .then((res) => console.log(res.json()))
- //    .then((data) => {
- //     setPost(data);
- //     // setImages(data.images || []);
- //     console.log(data);
- //    })
- //    .catch((err) => {
- //     setError(err.message);
- //     console.log(err);
- //    });
- //  }, [id]);
 
  useEffect(() => {
   const fetchPost = async () => {

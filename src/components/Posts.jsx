@@ -1,31 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Post from './Post';
+import fetchData from './blog';
 
 export function Posts() {
  const [blogs, setBlog] = useState([]);
  const [records, setRecord] = useState([]);
- 
 
  useEffect(() => {
-  const fetchData = async () => {
+  async function useFetchData() {
    try {
-    const response = await fetch('https://dummyjson.com/products', {
-     method: 'GET',
-    });
-
-    if (!response.ok) {
-     throw new Error('Network response was not ok');
-    }
-
-    const data = await response.json();
-    setBlog(data.products);
-    setRecord(data.products);
+    const data = await fetchData();
+    setBlog(data.product);
+    setRecord(data.product);
+    console.log(data);
    } catch (error) {
-    console.error('Error fetching data:', error);
+    console.error('There was error while fetching data', error);
    }
-  };
-
-  fetchData();
+  }
+  useFetchData;
  }, []);
 
  function handleSearch(e) {

@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 
 function NewBlog() {
- const blog = useContext(BlogsContext);
  const [title, setTitle] = useState();
  const [content, setContent] = useState();
  const [image, setImage] = useState();
