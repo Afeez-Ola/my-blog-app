@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Post from './Post';
 
-function Posts() {
+export function Posts() {
  const [blogs, setBlog] = useState([]);
  const [records, setRecord] = useState([]);
-
- const [title, setTitle] = useState();
- const [content, setContent] = useState();
- const [image, setImage] = useState();
+ 
 
  useEffect(() => {
   const fetchData = async () => {
@@ -66,4 +63,8 @@ function Posts() {
  );
 }
 
-export default Posts;
+export const BlogsContext = React.createContext();
+export const BlogsProvider = BlogsContext.Provider;
+export const BlogsConsumer = BlogsContext.Consumer;
+
+export default BlogsContext;
