@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { BlogsProvider, BlogsContext, BlogsConsumer } from './Posts';
 
 function NewBlog() {
  const blog = useContext(BlogsContext);
