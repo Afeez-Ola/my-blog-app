@@ -28,6 +28,10 @@ function Posts() {
   fetchData();
  }, []);
 
+ function handleSearch(e) {
+  console.log(e.target.value);
+ }
+
  return (
   <div className='posts'>
    <div className='search-container'>
@@ -35,6 +39,7 @@ function Posts() {
      className='search-input'
      type='text'
      placeholder='search posts'
+     onChange={handleSearch}
     ></input>
    </div>
    <div className='posts-container'>
