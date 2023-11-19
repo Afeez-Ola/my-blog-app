@@ -5,16 +5,26 @@ function Posts() {
  const [blogs, setBlog] = useState([]);
 
  useEffect(() => {
-  fetch('https://dummyjson.com/products', {
-   method: 'GET',
-  })
-   .then((res) => res.json())
-   .then((data) => {
+  const fetchData = async () => {
+   try {
+    const response = await fetch('https://dummyjson.com/products', {
+     method: 'GET',
+    });
+
+    if (!response.ok) {
+     throw new Error('Network response was not ok');
+    }
+
+    const data = await response.json();
     console.log(data.products);
     setBlog(data.products);
-   })
-   .catch((err) => console.log(err));
- });
+   } catch (error) {
+    console.error('Error fetching data:', error);
+   }
+  };
+
+  fetchData();
+ }, []);
 
  return (
   <div className='posts'>
@@ -29,7 +39,7 @@ function Posts() {
     {blogs.map((blog, index) => {
      return (
       <Post
-       index={index}
+       index={index + 1}
        title={blog.title}
        thumbnail={blog.thumbnail}
        description={blog.description}

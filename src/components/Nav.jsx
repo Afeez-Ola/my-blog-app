@@ -6,9 +6,7 @@ function NavBar() {
   <div className='nav'>
    <h1 className='nav-title'>Bolaji</h1>
    <ul className='nav-links'>
-    <li>
-     <Link to='/'>Home</Link>
-    </li>
+    <li>Home</li>
     <li>New Blog</li>
    </ul>
   </div>
