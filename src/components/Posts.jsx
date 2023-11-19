@@ -3,6 +3,7 @@ import Post from './Post';
 
 function Posts() {
  const [blogs, setBlog] = useState([]);
+ const [records, setRecord] = useState([]);
 
  useEffect(() => {
   const fetchData = async () => {
@@ -18,6 +19,7 @@ function Posts() {
     const data = await response.json();
     console.log(data.products);
     setBlog(data.products);
+    setRecord(data.products);
    } catch (error) {
     console.error('Error fetching data:', error);
    }
