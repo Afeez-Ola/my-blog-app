@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react';
-
 const fetchData = async () => {
  try {
   const response = await fetch('https://dummyjson.com/products', {
@@ -17,3 +15,5 @@ const fetchData = async () => {
  }
 };
 export default fetchData;
+
+

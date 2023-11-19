@@ -1,10 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import fetchData from './blog';
 
 function NewBlog() {
  const [title, setTitle] = useState();
  const [content, setContent] = useState();
  const [image, setImage] = useState();
+ const [data, setData] = useState([]);
+
+ useEffect(() => {
+  async function useFetchData() {
+   try {
+    const data = await fetchData();
+    setData(data.products);
+    console.log(data.products);
+   } catch (error) {
+    console.error('There was error while fetching data', error);
+   }
+  }
+  useFetchData();
+ }, []);
 
  function handleTitleChange(e) {
   setTitle(e.target.value);
@@ -18,9 +32,16 @@ function NewBlog() {
   setImage(e.target.value);
  }
 
- function handleSubmit(e){
-    e.preventDefault()
-    
+ function handleSubmit(e) {
+  e.preventDefault();
+  const newBlog = {
+   title: title,
+   description: content,
+   thumbnail: image,
+  };
+  data.push(newBlog);
+  console.log(data);
+  console.log(typeof data);
  }
 
  console.log(title, content, image);
@@ -38,7 +59,9 @@ function NewBlog() {
     <label htmlFor='image'>Image URL:</label>
     <input onChange={handleImageChange} type='text' id='image' />
    </div>
-   <button type='submit'>Submit</button>
+   <button onClick={handleSubmit} type='submit'>
+    Submit
+   </button>
   </form>
  );
 }
