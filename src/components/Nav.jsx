@@ -11,7 +11,9 @@ function NavBar() {
     <li>
      <Link to={'/'}>Home</Link>
     </li>
-    <li>New Blog</li>
+    <li>
+     <Link to={'/new'}>New Blog</Link>
+    </li>
    </ul>
   </div>
  );
