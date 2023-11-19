@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import fetchData from './blog';
 
 function NewBlog() {
  const [title, setTitle] = useState();
@@ -15,6 +16,11 @@ function NewBlog() {
 
  function handleImageChange(e) {
   setImage(e.target.value);
+ }
+
+ function handleSubmit(e){
+    e.preventDefault()
+    
  }
 
  console.log(title, content, image);
