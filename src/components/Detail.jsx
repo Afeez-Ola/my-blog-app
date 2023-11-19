@@ -5,8 +5,6 @@ function Detail() {
  const { id } = useParams();
  const [post, setPost] = useState({});
  const [images, setImages] = useState([]);
- const [error, setError] = useState(null);
-
 
  useEffect(() => {
   const fetchPost = async () => {

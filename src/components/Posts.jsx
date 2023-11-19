@@ -17,7 +17,7 @@ export function Posts() {
     console.error('There was error while fetching data', error);
    }
   }
-  useFetchData;
+  useFetchData();
  }, []);
 
  function handleSearch(e) {
