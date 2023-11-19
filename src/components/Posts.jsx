@@ -17,7 +17,6 @@ function Posts() {
     }
 
     const data = await response.json();
-    console.log(data.products);
     setBlog(data.products);
     setRecord(data.products);
    } catch (error) {
@@ -29,8 +28,6 @@ function Posts() {
  }, []);
 
  function handleSearch(e) {
-  console.log(e.target.value);
-  console.log(records, 'records');
   setBlog(
    records.filter((record) => {
     return record.title.toLowerCase().includes(e.target.value.toLowerCase());
