@@ -10,9 +10,9 @@ import fetchData from './blog';
   async function useFetchData() {
    try {
     const data = await fetchData();
-    setBlog(data.product);
-    setRecord(data.product);
-    console.log(data);
+    setBlog(data.products);
+    setRecord(data.products);
+    console.log(data.products);
    } catch (error) {
     console.error('There was error while fetching data', error);
    }
