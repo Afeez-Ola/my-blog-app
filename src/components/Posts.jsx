@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Post from './Post';
 import fetchData from './blog';
 
-export function Posts() {
+ function Posts() {
  const [blogs, setBlog] = useState([]);
  const [records, setRecord] = useState([]);
 
@@ -55,8 +55,4 @@ export function Posts() {
  );
 }
 
-export const BlogsContext = React.createContext();
-export const BlogsProvider = BlogsContext.Provider;
-export const BlogsConsumer = BlogsContext.Consumer;
-
-export default BlogsContext;
+export default Posts
