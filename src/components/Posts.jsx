@@ -53,6 +53,7 @@ function Posts() {
        title={blog.title}
        thumbnail={blog.thumbnail}
        description={blog.description}
+       brand={blog.brand}
       ></Post>
      );
     })}
