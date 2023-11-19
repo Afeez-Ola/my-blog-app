@@ -2,23 +2,39 @@ import React, { useEffect, useState } from 'react';
 import Post from './Post';
 import fetchData from './blog';
 
- function Posts() {
+function Posts() {
  const [blogs, setBlog] = useState([]);
  const [records, setRecord] = useState([]);
 
- useEffect(() => {
-  async function useFetchData() {
-   try {
-    const data = await fetchData();
-    setBlog(data.products);
-    setRecord(data.products);
-    console.log(data.products);
-   } catch (error) {
-    console.error('There was error while fetching data', error);
-   }
-  }
-  useFetchData();
- }, []);
+ let data = {
+  id: 22,
+  title: 'Elbow Macaroni - 400 gm',
+  description: 'Product details of Bake Parlor Big Elbow Macaroni - 400 gm',
+  brand: 'Bake Parlor Big',
+  thumbnail: 'https://i.dummyjson.com/data/products/22/thumbnail.jpg',
+  images: [
+   'https://i.dummyjson.com/data/products/22/1.jpg',
+   'https://i.dummyjson.com/data/products/22/2.jpg',
+   'https://i.dummyjson.com/data/products/22/3.jpg',
+  ],
+ };
+
+ setBlog(data);
+ setRecord(data);
+
+ //  useEffect(() => {
+ //   async function useFetchData() {
+ //    try {
+ //     const data = await fetchData();
+ //     setBlog(data.products);
+ //     setRecord(data.products);
+ //     console.log(data.products);
+ //    } catch (error) {
+ //     console.error('There was error while fetching data', error);
+ //    }
+ //   }
+ //   useFetchData();
+ //  }, []);
 
  function handleSearch(e) {
   setBlog(
@@ -55,4 +71,4 @@ import fetchData from './blog';
  );
 }
 
-export default Posts
+export default Posts;
