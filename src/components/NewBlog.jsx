@@ -17,7 +17,7 @@ function NewBlog() {
   setImage(e.target.value);
  }
 
- console.log(title, content, image, blog);
+ console.log(title, content, image);
  return (
   <form className='new_form'>
    <div>
