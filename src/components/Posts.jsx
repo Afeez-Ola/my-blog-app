@@ -30,6 +30,12 @@ function Posts() {
 
  function handleSearch(e) {
   console.log(e.target.value);
+  console.log(records, 'records');
+  setBlog(
+   records.filter((record) => {
+    return record.title.toLowerCase().includes(e.target.value.toLowerCase());
+   }),
+  );
  }
 
  return (
@@ -39,7 +45,7 @@ function Posts() {
      className='search-input'
      type='text'
      placeholder='search posts'
-     onChange={handleSearch}
+     onInput={handleSearch}
     ></input>
    </div>
    <div className='posts-container'>
