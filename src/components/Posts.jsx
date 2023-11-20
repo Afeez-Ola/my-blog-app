@@ -3,17 +3,19 @@ import Post from './Post';
 import { Blogs } from './Blogs';
 
 function Posts() {
- const [blogs, setBlog] = useState([]);
+ //  const [blogs, setBlog] = useState([]);
  const [records, setRecord] = useState([]);
 
- const randomBlogPost = Blogs();
- useEffect(() => {
-  try {
-   setBlog((prevObject) => [...prevObject, randomBlogPost]);
-  } catch (error) {
-   console.log('There was an error', error);
-  }
- }, []);
+ //  const randomBlogPost = Blogs();
+ //  useEffect(() => {
+ //   try {
+ //    setBlog((prevObject) => [...prevObject, randomBlogPost]);
+ //   } catch (error) {
+ //    console.log('There was an error', error);
+ //   }
+ //  }, []);
+
+ const blogs = Blogs();
 
  //  setBlog(data);
  //  setRecord(data);

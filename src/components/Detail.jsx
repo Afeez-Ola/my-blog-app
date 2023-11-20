@@ -7,26 +7,7 @@ function Detail() {
  const [images, setImages] = useState([]);
 
  useEffect(() => {
-  const fetchPost = async () => {
-   try {
-    const response = await fetch(`https://dummyjson.com/products/${id}`, {
-     method: 'GET',
-    });
-
-    if (!response.ok == 200) {
-     throw new Error('Network error encounterred!');
-    }
-
-    const data = await response.json();
-    setPost(data);
-    console.log(data);
-    setImages(data.images);
-   } catch (error) {
-    console.log('Error fetching data:', error);
-   }
-  };
-
-  fetchPost();
+  
  }, [id]);
 
  console.log(post);
