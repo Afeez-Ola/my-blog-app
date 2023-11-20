@@ -9,6 +9,8 @@ function Posts() {
  const randomBlogPost = Blogs();
  console.log(randomBlogPost);
 
+ setBlog(randomBlogPost);
+
  //  setBlog(data);
  //  setRecord(data);
 
