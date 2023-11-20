@@ -6,10 +6,11 @@ function Posts() {
  const [blogs, setBlog] = useState([]);
  const [records, setRecord] = useState([]);
 
+ const randomBlogPost = Blogs();
+ console.log(randomBlogPost);
 
-
- setBlog(data);
- setRecord(data);
+ //  setBlog(data);
+ //  setRecord(data);
 
  function handleSearch(e) {
   setBlog(
