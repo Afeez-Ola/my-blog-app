@@ -15,9 +15,7 @@ export function Blogs() {
  const thumbnail = faker.image.image();
 
  const numImages = Math.floor(Math.random() * 4) + 1; //
- const images = Array.from({ length: numImages }, () =>
-  faker.image.urlLoremFlickr({ category: 'nature', width: 800, height: 600 }),
- );
+ const images = Array.from({ length: numImages }, () => faker.image.imageUrl());
 
  return {
   id,
