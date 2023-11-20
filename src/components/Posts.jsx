@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import Post from './Post';
-import { Blogs } from './Blogs';
+import { Blogs, getBlogs } from './Blogs';
 
 function Posts() {
- //  const [blogs, setBlog] = useState([]);
+ const [blogs, setBlogs] = useState([]);
  const [records, setRecord] = useState([]);
 
- //  const randomBlogPost = Blogs();
- //  useEffect(() => {
- //   try {
- //    setBlog((prevObject) => [...prevObject, randomBlogPost]);
- //   } catch (error) {
- //    console.log('There was an error', error);
- //   }
- //  }, []);
+ setBlogs(getBlogs());
 
- const blogs = Blogs();
+ console.log(blogs);
 
  //  setBlog(data);
  //  setRecord(data);
