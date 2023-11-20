@@ -7,12 +7,13 @@ function Posts() {
  const [records, setRecord] = useState([]);
 
  const randomBlogPost = Blogs();
- //  console.log(typeof randomBlogPost);
- try {
-  setBlog((prevObject) => [...prevObject, randomBlogPost]);
- } catch (error) {
-  console.log('There was an error', error);
- }
+ useEffect(() => {
+  try {
+   setBlog((prevObject) => [...prevObject, randomBlogPost]);
+  } catch (error) {
+   console.log('There was an error', error);
+  }
+ }, []);
 
  //  setBlog(data);
  //  setRecord(data);
@@ -36,8 +37,7 @@ function Posts() {
     ></input>
    </div>
    <div className='posts-container'>
-    <h1>Hello </h1>
-    {/* {blogs.map((blog) => {
+    {blogs.map((blog) => {
      return (
       <Post
        key={blog.id}
@@ -48,7 +48,7 @@ function Posts() {
        brand={blog.brand}
       ></Post>
      );
-    })} */}
+    })}
    </div>
   </div>
  );
