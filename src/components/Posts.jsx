@@ -9,7 +9,7 @@ function Posts() {
  const randomBlogPost = Blogs();
  //  console.log(typeof randomBlogPost);
  try {
-  setBlog([randomBlogPost]);
+  setBlog((prevObject) => [...prevObject, randomBlogPost]);
  } catch (error) {
   console.log('There was an error', error);
  }
