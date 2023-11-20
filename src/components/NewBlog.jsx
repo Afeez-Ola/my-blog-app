@@ -2,6 +2,14 @@ import React, { useState, useEffect } from 'react';
 import fetchData from './blog';
 
 function NewBlog() {
+  function generateUniqueId() {
+  const timestamp = new Date().getTime();
+  const random = Math.random().toString(36).substring(2);
+
+  const uniqueId = timestamp + random;
+
+  return uniqueId;
+ }
  const [title, setTitle] = useState();
  const [content, setContent] = useState();
  const [image, setImage] = useState();
@@ -35,6 +43,7 @@ function NewBlog() {
  function handleSubmit(e) {
   e.preventDefault();
   const newBlog = {
+   id: generateUniqueId(),
    title: title,
    description: content,
    thumbnail: image,
@@ -59,7 +68,12 @@ function NewBlog() {
     <label htmlFor='image'>Image URL:</label>
     <input onChange={handleImageChange} type='text' id='image' />
    </div>
-   <button onClick={handleSubmit} type='submit'>
+   <button
+    onClick={() => {
+     handleSubmit();
+    }}
+    type='submit'
+   >
     Submit
    </button>
   </form>

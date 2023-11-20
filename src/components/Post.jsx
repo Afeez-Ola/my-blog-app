@@ -5,7 +5,7 @@ function Post(props) {
  return (
   <Link to={`/read/${props.index}`}>
    <div className='wrapper'>
-    <div className='card'>
+    <div key={props.key} className='card'>
      <div class='card-banner'>
       <p class='category-tag popular'>{props.brand}</p>
       <img class='banner-img' src={props.thumbnail} alt=''></img>
