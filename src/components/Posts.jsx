@@ -7,9 +7,9 @@ function Posts() {
  const [records, setRecord] = useState([]);
 
  const randomBlogPost = Blogs();
- console.log(randomBlogPost);
+ console.log(typeof randomBlogPost);
 
- setBlog(randomBlogPost);
+ setBlog([randomBlogPost]);
 
  //  setBlog(data);
  //  setRecord(data);
