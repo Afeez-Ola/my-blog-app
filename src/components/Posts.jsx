@@ -4,7 +4,6 @@ import { Blogs, getBlogs } from './Blogs';
 
 function Posts() {
  const [blogs, setBlogs] = useState([]);
- const [records, setRecord] = useState([]);
 
  useEffect(() => {
   try {
@@ -13,19 +12,7 @@ function Posts() {
    console.log('There was an error in setting blogs', error);
   }
  });
-
  console.log(blogs);
-
- //  setBlog(data);
- //  setRecord(data);
-
-//  function handleSearch(e) {
-//   setBlog(
-//    records.filter((record) => {
-//     return record.title.toLowerCase().includes(e.target.value.toLowerCase());
-//    }),
-//   );
-//  }
 
  return (
   <div className='posts'>
