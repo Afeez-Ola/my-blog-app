@@ -7,9 +7,12 @@ function Posts() {
  const [records, setRecord] = useState([]);
 
  const randomBlogPost = Blogs();
- console.log(typeof randomBlogPost);
-
- setBlog([randomBlogPost]);
+ //  console.log(typeof randomBlogPost);
+ try {
+  setBlog([randomBlogPost]);
+ } catch (error) {
+  console.log('There was an error', error);
+ }
 
  //  setBlog(data);
  //  setRecord(data);
