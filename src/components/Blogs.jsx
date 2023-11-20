@@ -29,6 +29,7 @@ export function Blogs() {
 
 export function getBlogs() {
  const [blogs, setBlog] = useState([]);
+ //  const blogs = Blogs();
 
  useEffect(() => {
   try {

@@ -6,20 +6,26 @@ function Posts() {
  const [blogs, setBlogs] = useState([]);
  const [records, setRecord] = useState([]);
 
- setBlogs(getBlogs());
+ useEffect(() => {
+  try {
+   setBlogs((prevValue) => [...prevValue, getBlogs()]);
+  } catch (error) {
+   console.log('There was an error in setting blogs', error);
+  }
+ });
 
  console.log(blogs);
 
  //  setBlog(data);
  //  setRecord(data);
 
- function handleSearch(e) {
-  setBlog(
-   records.filter((record) => {
-    return record.title.toLowerCase().includes(e.target.value.toLowerCase());
-   }),
-  );
- }
+//  function handleSearch(e) {
+//   setBlog(
+//    records.filter((record) => {
+//     return record.title.toLowerCase().includes(e.target.value.toLowerCase());
+//    }),
+//   );
+//  }
 
  return (
   <div className='posts'>
@@ -28,7 +34,6 @@ function Posts() {
      className='search-input'
      type='text'
      placeholder='search posts'
-     onInput={handleSearch}
     ></input>
    </div>
    <div className='posts-container'>
