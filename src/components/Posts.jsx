@@ -36,7 +36,8 @@ function Posts() {
     ></input>
    </div>
    <div className='posts-container'>
-    {blogs.map((blog) => {
+    <h1>Hello </h1>
+    {/* {blogs.map((blog) => {
      return (
       <Post
        key={blog.id}
@@ -47,7 +48,7 @@ function Posts() {
        brand={blog.brand}
       ></Post>
      );
-    })}
+    })} */}
    </div>
   </div>
  );
